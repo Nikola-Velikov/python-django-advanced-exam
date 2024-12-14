@@ -33,20 +33,20 @@ To run **Auto Vista** locally, follow the steps below:
 
 2. Navigate into the project directory:
     ```bash
-    cd auto-vista
+    cd autovista
     ```
 
 3. Install dependencies (if applicable):
     ```bash
-    npm install
+    pip install
     ```
 
 4. Run the application:
     ```bash
-    npm start
+    python manage.py runserver
     ```
 
-Your application will now be live at `http://localhost:3000`.
+Your application will now be live at `http://localhost:8000`.
 
 ## Usage
 
