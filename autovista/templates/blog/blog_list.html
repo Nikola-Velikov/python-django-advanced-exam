@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="page-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Read our Blog</h1>
+            <span>Know more interesting facts about cars!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="services">
+      <div class="container">
+        <div class="row">
+           <div class="col-md-4">
+            <div class="service-item">
+          {% for blog in blogs %}
+
+
+              <article id='tabs-1' style="
+            border-radius: 15px; /* Rounded corners */
+            padding: 20px;
+            width: 800px;
+            margin: 20px auto;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;" >
+                <img src="{{blog.image.url}}" alt="">
+                  <br>
+                  <br>
+                  <br>
+                <h4><a href="{% url 'blog-detail' blog.pk%}"  style="color:black;">{{blog.title }}</a></h4>
+                  <br>
+                <div style="margin-bottom:10px;">
+                              <span><i class="fa fa-user"></i> {{blog.owner.username}} &nbsp;|&nbsp; <i class="fa fa-calendar"></i> {{blog.created_at}}</span>
+
+                </div>
+                <p><p>{{ blog.content|truncatewords:30 }}</p></p>
+                <br>
+                <div>
+                  <a href="{% url 'blog-detail' blog.pk %}" class="filled-button">Continue Reading</a>
+                </div>
+              </article>
+              <br>
+              <br>
+                {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

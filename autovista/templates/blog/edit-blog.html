@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div
+  class="page-heading header-text"
+  style="background-image: url('{% static 'styles/images/about-fullscreen-image-1-1920x600.jpg' %}');"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Edit Blog</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<div id="register-component" class="container">
+  <form method="post" action="{% url 'blog-edit' blog.pk %}" enctype="multipart/form-data">
+    {% csrf_token %}
+      {{form}}
+    <br />
+   <button
+  type="submit"
+  style="
+    display: flex;
+    margin: 0 auto;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 150px; /* Adjust width as needed */
+  "
+>
+  Edit
+</button>
+  </form>
+</div>
+<br />
+<br />
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

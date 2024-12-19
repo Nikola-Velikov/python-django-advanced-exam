@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<div
+  class="page-heading header-text"
+  style="background-image: url('{% static 'styles/images/banner-image-1-1920x500.jpg' %}');"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Login</h1>
+        <span>Your personal data is secure!</span>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<div id="register-component">
+  <form method="post" action="{% url 'login' %}" style="width:700px !important";>
+       {% csrf_token %}
+        {{ form }}
+
+   <button
+  type="submit"
+  style="
+    display: flex;
+    margin: 0 auto;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 150px; /* Adjust width as needed */
+  "
+>
+  Login
+</button>
+    </button>
+  </form>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

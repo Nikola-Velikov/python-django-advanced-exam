@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="page-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Auto Parts</h1>
+            <span>Choose what you think is the best for your vehicle!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="services">
+      <div class="container">
+        <div class="row">
+         {% for auto_part in auto_parts %}
+        <div class="col-md-4">
+            <div class="service-item">
+                <img width="250px" height="300px" src="{{ auto_part.image.url }}" alt="{{ auto_part.title }}">
+                <div class="down-content">
+                    <h4>{{ auto_part.title }}</h4>
+                    <div style="margin-bottom:10px;">
+                        <span>
+                            {% if auto_part.discounted_price %}
+                            <del><sup>$</sup>{{ auto_part.price }}</del> &nbsp;
+
+                            <sup>$</sup>{{ auto_part.discounted_price }}
+                            {%else%}
+                             <sup>$</sup>{{ auto_part.price }}
+                            {%endif%}
+                        </span>
+                    </div>
+                    <p>
+                        <i class="fa fa-car"></i> {{ auto_part.model }} &nbsp;&nbsp;&nbsp;
+                    </p>
+                    <a href="{% url 'auto-part-detail' auto_part.pk %}" class="filled-button">View More</a>
+                </div>
+            </div>
+            <br>
+        </div>
+    {% endfor %}
+       </div>
+      </div>
+    </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}

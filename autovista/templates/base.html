@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+     <link rel="stylesheet" href="{% static 'styles/css/style.css' %}"/>
+
+    <link rel="stylesheet" href="{% static 'styles/css/fontawesome.css' %}">
+    <title>Auto Vista</title>
+
+
+  </head>
+  <body>
+
+       {% include 'common/nav.html' %}
+<!--{% if messages %}-->
+<!--<div class="container mt-3">-->
+<!--  {% for message in messages %}-->
+<!--  <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-alert">-->
+<!--    {{ message }}-->
+<!--      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">-->
+<!--    <span aria-hidden="true">&times;</span>-->
+<!--  </button>-->
+<!--  </div>-->
+<!--  {% endfor %}-->
+<!--</div>-->
+<!--{% endif %}-->
+        {% block content %}
+
+        {% endblock %}
+
+
+
+    <div class="sub-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p>
+                Copyright © 2024 Auto Vista Dealership
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $('#deleteModal').on('show.bs.modal', function (event) {
+      const button = $(event.relatedTarget);  // Button that triggered the modal
+      const deleteUrl = button.data('href');  // URL to delete the offer
+
+      const modal = $(this);
+      modal.find('#confirm-delete').attr('href', deleteUrl);
+    });
+    </script>
+  <script>
+<!--  document.addEventListener('DOMContentLoaded', function () {-->
+<!--    const successAlert = document.getElementById('success-alert');-->
+
+<!--   if (successAlert) {-->
+<!--    // Auto-dismiss after 3 seconds-->
+<!--    setTimeout(() => {-->
+<!--      successAlert.classList.add('fade-out'); // Add fade-out class-->
+<!--      successAlert.addEventListener('transitionend', () => {-->
+<!--        successAlert.remove(); // Fully remove element after animation-->
+<!--      });-->
+<!--    }, 3000);-->
+<!--  }-->
+<!--});-->
+</script>
+  </body>
+</html>
